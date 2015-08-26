@@ -1,0 +1,25 @@
+{
+	"videos":[
+		{
+			"name":"Opening Titles",
+			"desc":"A perfect way to begin the adventure. Watch the Outlander opening titles.",
+			"path":"http://www.starz.com/videos/embed/da6176d76bb04503a0125c17febdbde0",
+			"thumb":"openingtitles.jpg"
+		},{
+			"name":"Opening Titles",
+			"desc":"A perfect way to begin the adventure. Watch the Outlander opening titles.",
+			"path":"http://www.starz.com/videos/embed/da6176d76bb04503a0125c17febdbde0",
+			"thumb":"openingtitles.jpg"
+		},{
+			"name":"Opening Titles",
+			"desc":"A perfect way to begin the adventure. Watch the Outlander opening titles.",
+			"path":"http://www.starz.com/videos/embed/da6176d76bb04503a0125c17febdbde0",
+			"thumb":"openingtitles.jpg"
+		},{
+			"name":"Opening Titles",
+			"desc":"A perfect way to begin the adventure. Watch the Outlander opening titles.",
+			"path":"http://www.starz.com/videos/embed/da6176d76bb04503a0125c17febdbde0",
+			"thumb":"openingtitles.jpg"
+		}
+	]
+}

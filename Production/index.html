@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Blunt Talk Presskit</title>
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="container">
+		<!-- HEADER --->
+<div class="header">
+	<div class="header-container">
+		<!-- LOGO --->
+		<a class="logo" path="keyart" href="javascript:void(0);"></a>
+					
+		<!-- MENU --->
+		<div class="menu">
+			<script id="menuitem" type="text/x-handlebars-template">
+				{{#links}}
+					{{#external}}
+						<a class="mlink mhighlight" href="{{path}}" target="_blank">{{name}}</a>
+					{{/external}}
+					{{^external}}
+						<a class="mlink plink l{{path}}" href="javascript:void(0);" path="{{path}}" bg="{{background}}">{{name}}</a>
+					{{/external}}
+				{{/links}}
+			</script>
+		</div>
+					
+		<!--HEADER LOGO-->
+		<a class="headerlogo" href="http://www.starz.com/originals/blunttalk" target="_blank"></a>
+					
+		<!-- MENU LINK --->
+		<a class="mobile-link" href="javascript:void(0);">
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>
+	</div>
+</div>
+			
+<!-- MOBILE MENU --->
+<div class="mobile-menu">
+	<ul class="menu-list">
+		<script id="mobilemenuitem" type="text/x-handlebars-template">
+			{{#links}}
+				{{#external}}
+					<a class="mmlink mhighlight" href="{{path}}" target="_blank">{{name}}</a>
+				{{/external}}
+				{{^external}}
+					<a class="mmlink mplink" href="javascript:void(0);" path="{{path}}" img="images/bg/{{background}}">{{name}}</a>
+				{{/external}}
+			{{/links}}
+		</script>
+	</ul>
+</div>
+		
+		<!-- CONTENT --->
+		<div class="content">
+			<!-- KEY ART-->
+<div id="keyart" class="keyart section">
+	<div class="keyart-container">
+		<div class="bottom-gradient"></div>
+		<div class="left-gradient"></div>
+		<div class="right-gradient"></div>
+		<img src="images/bg/group.jpg" />
+	</div>
+	<div class="copy-container">
+		<div class="key-logo"></div>
+		<div class="synposis">
+			<p>"Blunt Talk," a 10-episode half-hour series, set in Los Angeles, follows Walter Blunt, played by Patrick Stewart, a British import intent on conquering the world of American cable news. Through the platform of his nightly news show, Blunt is on a mission to impart his wisdom and guidance on how Americans should live, think and behave.</p>
+			<p>Besieged by network bosses, a dysfunctional news staff, numerous ex-wives, children of all ages, and his own well-intentioned, but sometimes misguided decisions, Blunt's only support is in the form of the heavy-drinking, devoted manservant he transplanted from the U.K.</p>
+			<p>The cast is led by Patrick Stewart in the role of Walter Blunt, Jacki Weaver as Rosalie, Blunt's tough and motherly producer-manager and Adrian Scarborough as Harry, Blunt's manservant. Dolly Wells who plays Celia, Blunt's senior producer and head writer and Timm Sharp who plays Jim, Blunt's head writer, round out the cast.</p>
+			<p>The series from MRC is executive produced by Seth MacFarlane, Jonathan Ames (Creator and Showrunner), Stephanie Davis and Tristram Shapeero.</p>
+		</div>
+		<div class="key-tunein"></div>	
+	</div>
+</div>
+			<!-- CAST --->
+<div id="cast" class="cast section">
+	<div class="thumb-container">
+		<div class="thumb-list">
+			<script id="castthumbs" type="text/x-handlebars-template">
+				{{#cast}}
+					<a class="t-cast" href="javascript:void(0);" style="background-image:url(images/cast/{{safename}}_t.jpg);" n="{{@index}}"></a>
+				{{/cast}}
+			</script>
+		</div>
+	</div>
+
+	<div class="cast-arrows">
+		<a class="cast-next" href="javascript:void(0);"></a>
+		<a class="cast-prev" href="javascript:void(0);"></a>
+	</div>
+
+	<div class="character-content">
+		<script id="castdetails" type="text/x-handlebars-template">
+			{{#cast}}
+				<!-- {{safename}} -->
+				<div class="character" id="{{safename}}">
+					<div class="character-image" style="background-image:url(images/cast/{{safename}}_l.jpg);"></div>
+				
+					<div class="character-copy">
+						<div class="character-icon" style="background-image: url(images/cast/{{icon}});"></div>
+						<div class="character-quote">&#8220;{{quote}}&#8221;</div>
+						<div class="character-name">{{name}}</div>
+						<div class="actor-name">{{actor}}</div>
+						<div class="character-desc">{{{desc}}}</div>
+						
+						
+					</div>
+				</div>
+			{{/cast}}
+		</script>
+	</div>
+</div>
+			<!-- PRODUCTION --->
+<div id="production" class="production section">
+	<div class="prod-container">
+		<div class="prod-list">
+			<script id="prodlist" type="text/x-handlebars-template">
+				{{#prod}}
+					<a class="t-prod" href="javascript:void(0);" n="{{@index}}">{{{name}}}</a>
+				{{/prod}}
+			</script>
+		</div>
+
+		<div class="prod-arrows withimage">
+			<a class="prod-next" href="javascript:void(0);"></a>
+			<a class="prod-prev" href="javascript:void(0);"></a>
+		</div>
+
+		<div class="prod-content">
+			<script id="prodbio" type="text/x-handlebars-template">
+				{{#prod}}
+					<!-- {{name}} -->
+					<div class="prod" id="{{safename}}" image="{{image}}">
+						{{#image}}<div class="prod-image" style="background-image:url(images/prod/{{safename}}_l_bw.jpg);"></div>{{/image}}
+						<div class="prod-copy">
+							<div class="prod-name">{{{name}}}</div>
+							<div class="prod-position">{{role}}</div>
+							{{#desc}}
+								<p>{{{.}}}</p>
+							{{/desc}}
+						</div>					
+					</div>
+				{{/prod}}
+			</script>
+		</div>
+	</div>
+</div>
+			<!-- GALLERY --->
+<div id="gallery" class="gallery section">
+	<div class="gallery-container">
+		
+		<!-- Gallery View --->
+		<div class="gallery-view">
+			<a class="g-close" href="javascript:void(0);">CLICK TO CLOSE IMAGE</a>
+			<div class="image-view">
+				<img />
+			</div>
+			<div class="image-desc"></div>
+			<div class="g-arrows">
+				<a class="g-next" href="javascript:void(0);"></a>
+				<a class="g-prev" href="javascript:void(0);"></a>
+			</div>
+		</div>
+		
+		<!-- Gallery List --->
+		<div class="gallery-list">
+			<script id="galleryphotos" type="text/x-handlebars-template">
+				{{#photos}}
+					<a class="gallery-item" href="#" style="background-image:url( images/gallery/t/{{path}} );" caption="{{caption}}" n="{{@index}}" path="images/gallery/f/{{path}}"></a>
+				{{/photos}}
+				<div class="clear"></div>
+			</script>
+		</div>
+		
+		
+		<!-- View All --->
+		<p class="centerText caps gallerybottom">
+			<a href="http://starz.mediaroom.com/index.php" target= "_blank">Visit Starz Media Room to Download High Resolution Images</a>
+		</p>
+	</div>
+</div>
+			<!-- VIDEOS --->
+<div id="videos" class="videos section">
+	<div class="video-list">
+		<div class="video-container">
+			<a class="closevideo" href="javascript:void(0);">CLICK TO CLOSE VIDEO</a>
+
+			<div class="videoplayer">
+				<div class="videoplayer-content"></div>
+			</div>
+
+			<div class="player-copy">
+				<div class="video-name">Test Name</div>
+				<div class="video-desc">test desc</div>
+			</div>
+		</div>
+		
+		<div class="video-items">
+			<script id="videoitem" type="text/x-handlebars-template">
+				{{#videos}}
+					<a class="video-item" href="javascript:void(0);" style="background-image:url(images/video/{{thumb}});" path="{{path}}" n="{{@index}}" name="{{name}}" desc="{{desc}}">
+						<div class="video-copy">
+							<div class="video-name">{{name}}</div>
+							<div class="video-desc">{{desc}}</div>
+							<div class="clickheretoplay">Click here to play</div>
+						</div>
+					</a>
+				{{/videos}}
+			</script>
+		</div>
+	</div>
+</div>
+			<!-- DOWNLOADS --->
+<div id="downloads" class="downloads section">
+	<div class="downloads-content">
+		<div class="downloads-marquee"></div><!-- PDF's -->
+
+		<div class="downloads">
+			<h3>DOWNLOAD PDF FILES</h3>
+
+			<ul class="downloads-list">
+				<script id="downloadpdf" type="text/x-handlebars-template">
+					{{#pdfs}}
+						<li>
+							<a href="{{path}}" onclick="ga('send', 'event', 'PDF', 'click', '{{name}}');" target="_blank">
+								<div class="download-name">{{name}}</div>
+								<div class="clickto">Click Here to Download</div>
+							</a>
+						</li>
+					{{/pdfs}}
+				</script>
+			</ul>
+		</div><br class="clear">
+		<!-- MEDIA ROOM -->
+
+		<div class="mediaroom">
+			<h3>HIGH RESOLUTION IMAGES</h3>
+
+			<div class="mediaroom-list">
+				<a href="http://starz.mediaroom.com/index.php?s=56" onclick="ga('send', 'event', 'MediaRoom', 'click', 'Visit');" target="_blank"><span>Visit STARZ Media Room to download high resolution images and videos</span></a>
+			</div>
+		</div><!-- PRESS CONTACTS -->
+
+		<div class="press-contacts">
+			<h3>PRESS CONTACTS</h3>
+
+			<ul class="contacts">
+				<script id="downloadcontact" type="text/x-handlebars-template">
+					{{#contacts}}
+						<li>
+							<a href="mailto:{{email}}?subject=Blunt%20Talk%20Presskit" onclick="ga('send', 'event', 'Email', 'click', 'Alana');">
+								<div class="contact-name">{{name}}</div>
+								<div class="contact-company">{{company}}</div>
+								<div class="contact-phone">{{phone}}</div>
+								<div class="contact-email">{{email}}</div>
+							</a>
+						</li>
+					{{/contacts}}
+				</script>
+			</ul>
+		</div><br class="clear">
+		<br class="clear">
+	</div>
+</div>
+		</div>
+		
+		<!-- FOOTER --->
+<div class="footer">
+	<div class="social">
+		<a class="facebook" href="https://www.facebook.com/BluntTalk.Starz" target="_blank" onClick="ga('send', 'event', 'Social', 'click', 'Facebook');"></a>
+		<a class="twitter" href="https://twitter.com/BluntTalk_starz" target="_blank" onClick="ga('send', 'event', 'Social', 'click', 'Twitter');"></a>
+		<!--<a class="instagram" href="http://instagram.com/outlander_starz" target="_blank" onClick="ga('send', 'event', 'Social', 'click', 'Instagram');"></a>-->
+	</div>
+	<div class="copyright">STARZ and related channels and service marks are the property of Starz Entertainment, LLC. Blunt Talk &copy; MRC II Distribution Company, LP. All rights reserved.</div>
+</div>FOOTER
+	</div>
+	<script type="text/javascript" src="js/app.min.js"></script>
+</body>
+</html>

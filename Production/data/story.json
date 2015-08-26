@@ -1,0 +1,11 @@
+{
+	"items":[
+		{
+			"path":"page1.jpg",
+			"copy":false
+		},{
+			"path":"",
+			"copy":true
+		}
+	]
+}

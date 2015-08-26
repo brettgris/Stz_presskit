@@ -1,0 +1,31 @@
+<!-- VIDEOS --->
+<div id="videos" class="videos section">
+	<div class="video-list">
+		<div class="video-container">
+			<a class="closevideo" href="javascript:void(0);">CLICK TO CLOSE VIDEO</a>
+
+			<div class="videoplayer">
+				<div class="videoplayer-content"></div>
+			</div>
+
+			<div class="player-copy">
+				<div class="video-name">Test Name</div>
+				<div class="video-desc">test desc</div>
+			</div>
+		</div>
+		
+		<div class="video-items">
+			<script id="videoitem" type="text/x-handlebars-template">
+				{{#videos}}
+					<a class="video-item" href="javascript:void(0);" style="background-image:url(images/video/{{thumb}});" path="{{path}}" n="{{@index}}" name="{{name}}" desc="{{desc}}">
+						<div class="video-copy">
+							<div class="video-name">{{name}}</div>
+							<div class="video-desc">{{desc}}</div>
+							<div class="clickheretoplay">Click here to play</div>
+						</div>
+					</a>
+				{{/videos}}
+			</script>
+		</div>
+	</div>
+</div>

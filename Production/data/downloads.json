@@ -1,0 +1,46 @@
+{
+	"pdfs":[
+		{
+			"name":"Synopsis",
+			"path":"pdfs/blunttalk_synopsis.pdf"
+		},{
+			"name":"Character Descriptions",
+			"path":"pdfs/blunttalk_characterdesc.pdf"
+		},{
+			"name":"Cast Bios",
+			"path":"pdfs/blunttalk_castbios.pdf"
+		},{
+			"name":"Production Bios",
+			"path":"pdfs/blunttalk_productionbios.pdf"
+		},{
+			"name":"Cast Credits",
+			"path":"pdfs/blunttalk_castcredits.pdf"
+		},{
+			"name":"Production Credits",
+			"path":"pdfs/blunttalk_productioncredits.pdf"
+		},{
+			"name":"Production Notes",
+			"path":"pdfs/blunttalk_productionnotes.pdf"
+		},{
+			"name":"Episode Synopses",
+			"path":"pdfs/blunttalk_episodesynopses.pdf"
+		}	
+	],"contacts":[
+		{
+			"name":"Theano Apostolou",
+			"email":"theano@starz.com",
+			"phone":"(424) 204-4052",
+			"company":"STARZ Entertainment, LLC."
+		},{
+			"name":"Shannon Buck",
+			"email":"shannon.buck@starz.com",
+			"phone":"(424) 204-4173",
+			"company":"STARZ Entertainment, LLC."
+		},{
+			"name":"Danielle Dusky",
+			"email":"danielle.dusky@starz.com",
+			"phone":"(424) 204-4101",
+			"company":"STARZ Entertainment, LLC."
+		}
+	]
+}
