@@ -64,28 +64,28 @@ $break-mobile:500px;
 $imgPath:"../images/";
 
 /************************  MENU  ************************/
-@import 'partials/menu.scss';
+@import '../partials/menu.scss';
 
 /***********************  GLOBALS  **********************/
-@import 'partials/globals.scss';
+@import '../partials/globals.scss';
 
 /***********************  KEYART  *************************/
-@import 'partials/keyart.scss';
+@import '../partials/keyart.scss';
 
 /***********************  CAST  *************************/
-@import 'partials/cast.scss';
+@import '../partials/cast.scss';
 
 /********************  PRODUCTION  **********************/
-@import 'partials/prod.scss';
+@import '../partials/prod.scss';
 
 /*********************  GALLERY  ************************/
-@import 'partials/gallery.scss';
+@import '../partials/gallery.scss';
 
 /*********************  VIDEOS  *************************/
-@import 'partials/videos.scss';
+@import '../partials/videos.scss';
 
 /********************  DOWNLOADS  ***********************/
-@import 'partials/downloads.scss';
+@import '../partials/downloads.scss';
 
 /*********************  FOOTER  *************************/
-@import 'partials/footer.scss';
+@import '../partials/footer.scss';

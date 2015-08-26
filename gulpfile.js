@@ -20,9 +20,9 @@ gulp.task('html', function() {
 
 // Compile Our Sass with Compass
 gulp.task('sass', function() {
-    return gulp.src('scss/*.scss')
+    return gulp.src('Development/scss/compile/*.scss')
         .pipe(compass({
-	        'sass': 'Development/scss',
+	        'sass': 'Development/scss/compile',
 	        'css': 'Production/css',
 	        'images': 'Production/images',
 	        'style': 'compressed'
@@ -54,7 +54,7 @@ gulp.task('plugins', function(){
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch('Development/scripts/**/*', ['js']);
-    gulp.watch('Development/scss/**/*', ['css']);
+    gulp.watch('Development/scss/**/*', ['sass']);
     gulp.watch('Development/html/**/*', ['html']);
     gulp.watch(['Production/**/*']).on('change', browserSync.reload);
 });
@@ -69,4 +69,4 @@ gulp.task('sync', function() {
 });
 
 // Default Task
-gulp.task('default', ['html', 'css', 'js', 'watch', 'sync']);
+gulp.task('default', ['html', 'sass', 'js', 'watch', 'sync']);
