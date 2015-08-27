@@ -25,7 +25,7 @@
 		Templates All Loaded. 
 		HAVE FULL HTML NOW
 		****************/
-		function templatesDone(){			
+		function templatesDone(){	
 			//SET UP MENU
 			$.pageswitcher({
 				links: '.plink',
@@ -38,7 +38,8 @@
 				mobilebtn: '.mobile-link',
 				mobilecontainer: '.mobile-menu',
 				logo: '.logo',
-				backgrounds: true
+				backgrounds: true,
+				current: 'keyart'
 			});
 			
 			loadSlideShows();
