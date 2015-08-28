@@ -6,7 +6,6 @@ var concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
 	rename = require('gulp-rename'),
 	compass =  require('gulp-compass'),
-	browserify = require('gulp-browserify'),
 	gutil = require('gulp-util'),
 	browserSync = require('browser-sync').create(),
 	fileinclude = require('gulp-file-include'),
@@ -45,22 +44,22 @@ gulp.task('css', ['sass'], function () {
 gulp.task('js', function() {
     return gulp.src('Development/scripts/*.js')
         .pipe(concat('app.min.js'))
-        .pipe(browserify())
         .pipe(uglify())
         .pipe(gulp.dest('Production/js'));
 });
 
-gulp.task('plugins', function(){
-	return gulp.src('Development/requirements/*.js')
+// JS PLUGINS - concat and min
+gulp.task('plugins', function() {
+    return gulp.src('Development/requirements/*.js')
         .pipe(concat('plugins.min.js'))
-        
-        //.pipe(uglify())
-        .pipe(gulp.dest('Production/js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('Production/js'));
 });
 
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch('Development/scripts/**/*', ['js']);
+    gulp.watch('Development/requirements/**/*', ['plugins']);
     gulp.watch('Development/scss/**/*', ['sass']);
     gulp.watch('Development/html/**/*', ['html']);
     gulp.watch(['Production/**/*']).on('change', browserSync.reload);
@@ -76,4 +75,4 @@ gulp.task('sync', function() {
 });
 
 // Default Task
-gulp.task('default', ['html', 'sass', 'js', 'watch', 'sync']);
+gulp.task('default', ['html', 'sass', 'js', 'plugins', 'watch', 'sync']);
