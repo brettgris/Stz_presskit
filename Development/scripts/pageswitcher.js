@@ -1,114 +1,93 @@
-;(function($, window, document, undefined) {
-    /*****************
-    HandleBar Template Loader Plugin
-    ******************/
-    $.pageswitcher = function(options) {
-	    var defaults = {
-		    //REQUIRED
-			links: '.plink',
-			mobile: '.mplink',
-			pages: '.section',
-			bgtarget: 'body',
-			bgattr: 'bg',
-			bgsize: 'cover',
-			attr: 'path',
-			speed: 500,
-			current: 'home',
-			mobilebtn: '.mobilelink',
-			mobilecontainer: '.mobile-list',
-			backgrounds: true,
-			onChange: function(){}
-	    }
-	    
-	    /******************
-		 VARS
-		*******************/
-	    var plugin = this;
-	    plugin.settings = {};
-	    
-	    /******************
-		 CONSTRUCTOR
-		*******************/
-	    plugin.init = function(){
-		    plugin.settings = $.extend(defaults, options || {});
-		    plugin.links = $( plugin.settings.links );
-		    plugin.mobile = $( plugin.settings.mobile );
-		    plugin.pages = $( plugin.settings.pages );
-		    plugin.target =  $( plugin.settings.bgtarget );
-		    plugin.current = plugin.settings.current;
-		    plugin.setupPages();
-			plugin.addClicks();
-	    }
-	    
-	    /******************
-		 SET UP PAGES
-		*******************/
-	    plugin.setupPages = function(){
-		    plugin.pages.hide();
-		    
-		    $('.'+plugin.current).show();
-		    plugin.settings.onChange.call(plugin,  plugin.pages.attr('id') );
-		    
-		    if ( $('.l'+plugin.current ).length>0 ) {
-			    plugin.target.css('background', $('.l'+plugin.current ).attr(plugin.settings.bgattr) );
-				plugin.target.css('background-size', plugin.settings.bgsize);
-			}
-		    else plugin.target.attr( 'style', '' );
-		}
-	    
-	    /******************
-		 ADD CLICK EVENTS
-		*******************/
-	    plugin.addClicks = function(){
-			$( plugin.settings.links ).click(function(){
-				plugin.loadPage( $(this).attr(plugin.settings.attr) );
-			});  
-			$( plugin.settings.mobile ).click(function(){
-				plugin.loadPage( $(this).attr(plugin.settings.attr) );
-			});
-			$( plugin.settings.mobilebtn ).click(function(){
-				var c = $( plugin.settings.mobilecontainer );
-				if(c.css('display')!='none'){
-					c.hide();
-				}else {
-					c.slideDown(plugin.settings.speed);
-				}
-			});
-			
-			$(plugin.settings.logo).click(function(){
-				plugin.loadPage( $(this).attr('path') );
-			});
-		}
-		
-		/******************
-		 LOAD PAGE
-		*******************/
-		plugin.loadPage = function( t ){
-			$( plugin.settings.mobilecontainer ).hide();
-			
-			if ( plugin.current != t ){
-				$('.'+plugin.current ).fadeOut(plugin.settings.speed, function(){
-					var n = $('.'+t).fadeIn(plugin.settings.speed);
-					
-					plugin.settings.onChange.call(plugin,  $('.'+t).attr('id') );
-					plugin.current = t;
-					if( plugin.settings.backgrounds ) {
-						plugin.target.css('background', $('.l'+plugin.current ).attr(plugin.settings.bgattr));
-						plugin.target.css('background-size', plugin.settings.bgsize);
-					}
-				});
-			}
-		} 
-	   
-	    /******************
-		 START THE PARTY
-		*******************/
-	    plugin.init(options);
-	    
-		/******************
-		 RETURN
-		*******************/
-	    return plugin;
-    }
-})(jQuery, window, document);
+var bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
 
+(function($, window, document) {
+  var PageSwitcher;
+  PageSwitcher = (function() {
+    PageSwitcher.prototype.defaults = {
+      links: '.plink',
+      mobile: 'mplink',
+      pages: '.section',
+      bgtarget: 'body',
+      bgattr: 'bg',
+      bgsize: 'cover',
+      attr: 'path',
+      speed: 500,
+      current: 'home',
+      mobilebtn: '.mobilelink',
+      mobilecontainer: '.mobile-list',
+      backgrounds: true,
+      onChange: function() {}
+    };
+
+    function PageSwitcher(options) {
+      this.loadPage = bind(this.loadPage, this);
+      this.addClicks = bind(this.addClicks, this);
+      this.setupPages = bind(this.setupPages, this);
+      this.options = $.extend({}, this.defaults, options);
+      this.links = $(this.options.links);
+      this.mobile = $(this.options.mobile);
+      this.pages = $(this.options.pages);
+      this.target = $(this.options.bgtarget);
+      this.current = this.options.current;
+      this.setupPages();
+      this.addClicks();
+    }
+
+    PageSwitcher.prototype.setupPages = function() {
+      this.pages.hide();
+      $('.' + this.current).show();
+      this.options.onChange.call(this, this.pages.attr('id'));
+      if ($('.l' + this.current).length > 0) {
+        this.target.css('background', $('.l' + this.current).attr(this.options.bgattr));
+        return this.target.css('background-size', this.options.bgsize);
+      } else {
+        return this.target.attr('style', '');
+      }
+    };
+
+    PageSwitcher.prototype.addClicks = function() {
+      $(this.options.links + ", " + this.options.mobile + ", " + this.options.logo).click((function(_this) {
+        return function(evt) {
+          return _this.loadPage($(evt.target).attr(_this.options.attr));
+        };
+      })(this));
+      return $(this.options.mobilebtn).click((function(_this) {
+        return function() {
+          var c;
+          c = $(_this.options.mobilecontainer);
+          if (c.css('display') !== 'none') {
+            return c.hide();
+          } else {
+            return c.slideDown(_this.options.speed);
+          }
+        };
+      })(this));
+    };
+
+    PageSwitcher.prototype.loadPage = function(t) {
+      $(this.options.mobilecontainer).hide();
+      if (this.current !== t) {
+        return $('.' + this.current).fadeOut(this.options.speed, (function(_this) {
+          return function() {
+            var n;
+            n = $('.' + t).fadeIn(_this.options.speed);
+            _this.options.onChange.call(_this, $('.' + t).attr('id'));
+            _this.current = t;
+            if (_this.options.backgrounds) {
+              _this.target.css('background', $('.l' + _this.current).attr(_this.options.bgattr));
+              return _this.target.css('background-size', _this.options.bgsize);
+            }
+          };
+        })(this));
+      }
+    };
+
+    return PageSwitcher;
+
+  })();
+  return $.extend({
+    PageSwitcher: function(options) {
+      return new PageSwitcher(options);
+    }
+  });
+})(jQuery, window, document);
